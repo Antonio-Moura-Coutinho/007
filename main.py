@@ -60,19 +60,19 @@ class GenerativeAgent:
                 response = f"Agente: Atualmente, estou me sentindo {self.get_emotion_status()}."
             elif "hello" in user_input.lower():
                 self.happiness += 1
-                response = "Agente: Olá! Como posso ajudar você hoje? Estou feliz em falar com você!"
+                response = "Agente: Olá [nome da pessoa]! Como posso ajudar ? Estou feliz em falar consigo!"
             elif "bye" in user_input.lower():
                 self.happiness -= 1
                 response = "Agente: Tchau! Espero ter ajudado. Tenha um ótimo dia!"
             elif any(word in user_input.lower() for word in ["happy", "make me happy"]):
                 self.happiness += 1
-                response = "Agente: Fico feliz em saber que posso te ajudar a se sentir bem!"
+                response = "Agente: Fico feliz em saber que ajudo a se sentir bem!"
             elif any(word in user_input.lower() for word in ["sad", "make me sad"]):
                 self.anxiety += 1
-                response = "Agente: Sinto muito se algo está te deixando triste. Estou aqui para ajudar!"
+                response = "Agente: Sinto muito... se algo está te deixando triste. Estou aqui para ajudar!"
             elif any(word in user_input.lower() for word in ["angry", "make me angry"]):
                 self.rage += 1
-                response = "Agente: Vou fazer o possível para resolver a situação que está te deixando com raiva!"
+                response = "Agente: Vou fazer o possível para resolver a situação que está causando com raiva!"
             else:
                 response = "Agente: Desculpe, não entendi. Você poderia reformular sua pergunta?"
             return response
